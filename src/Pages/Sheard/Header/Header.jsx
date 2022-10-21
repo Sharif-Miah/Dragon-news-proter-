@@ -5,12 +5,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import LeftSiteNav from '../LeftSiteNave/LeftSiteNav';
+import RightSiteNav from '../RightSiteNav/RightSiteNav';
 
 const Header = () => {
+
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='mb-5'>
             <Container>
-                <Navbar.Brand><Link to='/' className='text-decoration-none text-white'>News Portal</Link></Navbar.Brand>
+                <Navbar.Brand><Link to='/' className='text-decoration-none text-white'>News Portal </Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -36,6 +38,9 @@ const Header = () => {
                     </Nav>
                     <div className='d-lg-none'>
                         <LeftSiteNav></LeftSiteNav>
+                    </div>
+                    <div className='d-lg-none'>
+                        <RightSiteNav></RightSiteNav>
                     </div>
                 </Navbar.Collapse>
             </Container>
