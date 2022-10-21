@@ -11,7 +11,7 @@ const LeftSiteNav = () => {
     }, [])
     return (
         <div>
-            <h1>LeftSiteNav= {categories.length}</h1>
+            <h1>LeftSiteNav {categories.length}</h1>
             <div>
                 {
                     categories.map(category => <p key={category.id}><Link to={`/category/${category.id}`}>{category.name}</Link></p>)
