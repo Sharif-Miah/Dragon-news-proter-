@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/ProviderContext';
 
 const Register = () => {
     const [accepted, setaccepted] = useState(false);
-    const { registerInProvider } = useContext(AuthContext)
+    const { registerInProvider, updateUserProfile } = useContext(AuthContext)
 
 
     const handleLoginForm = event => {
@@ -21,8 +21,17 @@ const Register = () => {
                 const user = result.user;
                 form.reset();
                 console.log(user);
+                handleUpdateUserProfile(name, photourl)
             })
             .catch(error => console.error(error))
+    }
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
     }
 
     const checkedBoxHandle = (event) => {
