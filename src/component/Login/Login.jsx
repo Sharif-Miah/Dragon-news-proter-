@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/ProviderContext';
 
 
 const Login = () => {
-    const [accepted, setaccepted] = useState(false);
+
     const { logInProvider } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -28,19 +28,13 @@ const Login = () => {
             .then(error => console.error(error))
     }
 
-    const checkedBoxHandle = (event) => {
-        const selecter = event.target.checked;
-        setaccepted(selecter);
-    }
+
 
     return (
         <Form onSubmit={handleLoginForm}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" name='email' placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -48,9 +42,9 @@ const Login = () => {
                 <Form.Control type="password" name='password' placeholder="Password" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check onClick={checkedBoxHandle} type="checkbox" label="I Agree All Terms and Condition" />
+                <Form.Check type="checkbox" label="I Agree All Terms and Condition" />
             </Form.Group>
-            <Button variant="primary" type="submit" disabled={!accepted}>
+            <Button variant="primary" type="submit">
                 Submit
             </Button>
         </Form>
