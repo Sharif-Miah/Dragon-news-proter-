@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../../component/Home/Home";
 import Login from "../../component/Login/Login";
+import PriveteRoute from "../../component/PriveteRoute/PriveteRoute";
 import Register from "../../component/Register/Register";
 import Main from "../../layout/Main";
 import Category from "../../Pages/Category/Category";
@@ -24,7 +25,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/news/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`),
-                element: <News></News>
+                element: <PriveteRoute><News></News></PriveteRoute>
             },
             {
                 path: '/login',
