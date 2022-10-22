@@ -48,11 +48,11 @@ const Header = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets" className='mt-2'>
+                        <Nav.Link href="#deets" >
                             {
                                 user?.uid ?
                                     <>
-                                        <span>{user.displayName}</span>
+                                        <span className='mt-2'>{user.displayName}</span>
                                         <button onClick={HandleLogOut} className='mx-2 text-white bg-primary'>Log out</button>
                                     </>
                                     :

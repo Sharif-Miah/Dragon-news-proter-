@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/ProviderContext';
 
 const Register = () => {
     const [accepted, setaccepted] = useState(false);
     const { registerInProvider } = useContext(AuthContext)
+
 
     const handleLoginForm = event => {
         event.preventDefault();
@@ -17,6 +19,7 @@ const Register = () => {
         registerInProvider(email, password)
             .then(result => {
                 const user = result.user;
+                form.reset();
                 console.log(user);
             })
             .catch(error => console.error(error))
