@@ -7,10 +7,11 @@ import { AuthContext } from '../../../Context/ProviderContext';
 import ListGropIconsLink from './ListGropIconsLink/ListGropIconsLink';
 import RightCarosel from './RightCarosel/RightCarosel';
 
-const provider = new GoogleAuthProvider();
-const gitProvider = new GithubAuthProvider()
 
 const RightSiteNav = () => {
+
+    const provider = new GoogleAuthProvider();
+    const gitProvider = new GithubAuthProvider()
 
     const { providerLogin, githubProviderLogin } = useContext(AuthContext);
 
